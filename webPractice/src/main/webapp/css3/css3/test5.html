@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css3/test5.html</title>
+<style type="text/css">
+/*  3. 가상클래스와 가상요소 */
+/*    가상클래스 (위치) 
+      :first-child, 태그:first-of-type 
+      :last-child, 태그:last-of-type
+      :nth-child(n), 태그:nth-of-type(n)
+      :nth-last-child(n), 태그:nth-last-of-type(n) */
+      
+/*     div안에 전체 3번째  => 배경색 yellow */
+		div :nth-child(3) {
+			background-color: yellow;
+		}
+		
+/*     div안에 p태그 중 3번째  => 배경색 green */
+		div p:nth-of-type(3) {
+			background-color: green;
+		}
+		
+/*     odd홀수 2n+1, even짝수 2n  => 배경색 skyblue */
+		div :nth-child(even) {
+			background-color: skyblue;
+		}
+</style>
+</head>
+<body>
+<div>
+	<h2>제목1</h2>
+	<p>본문 내용1</p>
+	<p>본문 내용2</p>
+	
+	<h2>제목2</h2>
+	<p>본문 내용2_1</p>
+	
+	<h2>제목3</h2>
+	<p>본문 내용3_1</p>
+</div>
+</body>
+</html>
+
+

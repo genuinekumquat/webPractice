@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test10.html</title>
+</head>
+<body>
+<form action="test1.html" method="get" name="fr">
+아이디 : <input type="text" name="id"><br>
+비밀번호 : <input type="password" name="pass"><br>
+자기소개 : <textarea name="intro" rows="10" cols="20"></textarea><br>
+라디오상자 : <input type="radio" name="ra" value="남">남
+           <input type="radio" name="ra" value="여">여<br>
+체크박스상자 : <input type="checkbox" name="ch" value="여행">여행
+            <input type="checkbox" name="ch" value="게임">게임<br>
+목록상자 : <select name="se">
+			<option value="">목록을 선택하세요</option>
+			<option value="목1">목록1</option>
+			<option value="목2">목록2</option>
+			<option value="목3">목록3</option>
+         </select> <br>    
+<input type="button" value="폼전체제어" onclick="fun1()">                 
+</form>
+
+<script type="text/javascript">
+function fun1() {
+	if(document.fr.id.value == ""){
+// 		아이디 입력, 포커스 , 리턴
+		alert("아이디 입력");
+		document.fr.id.focus();
+		return;
+	}
+	if(document.fr.pass.value == ""){
+// 		비밀번호 입력, 포커스 , 리턴
+		alert("비밀번호 입력");
+		document.fr.pass.focus();
+		return;
+	}
+	if(document.fr.intro.value == ""){
+// 		자기소개 입력, 포커스 , 리턴
+		alert("자기소개 입력");
+		document.fr.intro.focus();
+		return;
+	}
+	if(document.fr.ra[0].checked==false && document.fr.ra[1].checked==false){
+// 		라디오상자 입력,  리턴
+		alert("라디오상자 입력");
+		return;
+	}
+	if(document.fr.ch[0].checked==false && document.fr.ch[1].checked==false){
+// 		체크박스상자 입력,  리턴
+		alert("체크박스상자 입력");
+		return;
+	}
+	if(document.fr.se.value == ""){
+// 		목록상자 입력, 포커스 , 리턴
+		alert("목록상자 입력");
+		document.fr.se.focus();
+		return;
+	}
+	//폼 -> submit()
+	document.fr.submit();
+}
+</script>
+</body>
+</html>

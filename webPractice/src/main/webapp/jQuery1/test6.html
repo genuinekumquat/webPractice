@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery1/test6.html</title>
+</head>
+<body>
+<form action="test1.html" method="get" id="fr">
+	아이디 : <input type="text" name="id" id="myid"><br>
+	비밀번호 : <input type="password" name="pass" id="mypass"><br>
+	<div id="div2"></div>
+	<input type="button" value="로그인" id="btn1">
+</form>
+<script type="text/javascript" src="jquery-3.7.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+// 		id="btn1" 클릭했을때 => 아이디 value 출력 val()
+		$('#btn1').click(function(){
+// 			alert($('#myid').val());
+// 			alert($('#mypass').val());
+			if($('#myid').val() == ""){
+// 				아이디 입력하세요 
+// 				alert("아이디 입력하세요");
+				$('#div2').html("아이디 입력하세요").css("color","red"); 
+//              아이디 상자 포커스  .focus() 
+				$('#myid').focus();
+//              함수호출한 곳으로 되돌아감
+				return;
+			}
+			if($('#mypass').val() == "" ){
+// 				비밀번호 입력하세요 
+// 				alert("비밀번호 입력하세요");
+				$('#div2').html("비밀번호 입력하세요").css("color","red"); 
+//              비밀번호 상자 포커스  .focus() 
+				$('#mypass').focus();
+//              함수호출한 곳으로 되돌아감
+				return;
+			}
+			// 폼 전송 submit()
+			$('#fr').submit();
+		});
+	});
+</script>
+</body>
+</html>
+
+

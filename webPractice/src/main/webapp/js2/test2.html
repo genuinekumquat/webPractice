@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test2.html</title>
+</head>
+<body>
+<a href="test1.html">html 하이퍼링크</a>
+<a href="http://www.naver.com">네이버 하이퍼링크</a>
+<input type="button" value="주소줄정보" onclick="fun1()">
+<input type="button" value="주소줄정보변경" onclick="fun2()">
+<input type="button" value="js1폴더test1.html이동" onclick="fun3()">
+<input type="button" value="새로고침" onclick="fun4()">
+
+<script type="text/javascript">
+function fun4() {
+	//새로고침 F5
+	alert("새로고침");
+	location.reload();
+}
+
+function fun3() {
+	// "js1폴더test1.html이동" 메시지 출력
+	alert("js1폴더test1.html이동");
+	// js1폴더test1.html이동(하이퍼링크)
+	location.href="../js1/test1.html";
+}
+
+function fun2() {
+	// location.href 변수내용 변경 -> 웹브라우저 주소줄 내용 변경
+	// html 하이퍼링크 같은 기능
+	location.href = "test1.html";
+}
+
+function fun1() {
+	alert(location.href);
+}
+
+
+//p576 브라우저 내장객체 => 계층구조
+//window - location 
+//       - history
+//       - document - image,div,...
+//                  - form - text, password, textare
+//                         - checkbox, radio
+//                         - select
+
+// p590
+//window.location 내장객체 : 주제 웹브라우저 주소줄 정보를 저장하는 내장객체
+//                       : window 생략가능
+//                       : location.멤버변수, location.메서드() 호출
+
+//하이퍼링크 멤버변수 : location.href 멤버변수 -> 주소줄에 주소 저장된 변수
+//새로고침 메서드() : location.reload() -> 새로고침(F5) 기능
+
+</script>
+</body>
+</html>
+

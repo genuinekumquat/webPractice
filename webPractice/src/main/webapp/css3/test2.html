@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css3/test2.html</title>
+<style type="text/css">
+/* 인접 형제선택자 : 요소 + 요소
+   전체 형제선택자 : 요소 ~ 요소*/
+/*  h1태그 인접한 형제 p 태그   */
+h1 + p{
+	color: red;
+}
+/* h1태그 형제 p 태그 */
+h1 ~ p{
+	background-color: pink;
+}
+</style>
+</head>
+<body>
+<h1>제목</h1>
+<p>본문1</p>
+<p>본문2</p>
+<p>본문3</p>
+</body>
+</html>
+

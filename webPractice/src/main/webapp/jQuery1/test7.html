@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery1/test7.html</title>
+</head>
+<body>
+<form action="test1.html" method="get" name="fr" id="myfr">
+<div id="mydiv"></div>
+아이디 : <input type="text" name="id" id="myid"><br>
+비밀번호 : <input type="password" name="pass" id="mypass"><br>
+성별 : <input type="radio" name="gender" value="남" id="gender1">남
+      <input type="radio" name="gender" value="여" id="gender2">여<br>
+취미 : <input type="checkbox" name="hobby" value="여행" id="hobby1">여행
+      <input type="checkbox" name="hobby" value="게임" id="hobby2">게임
+      <input type="checkbox" name="hobby" value="축구" id="hobby3">축구<br>
+회원등급 : <select name="grade" id="mygrade">
+			<option value="">등급을 선택하세요</option>
+			<option value="1">1등급</option>
+			<option value="2">2등급</option>
+			<option value="3">3등급</option>
+         </select> <br>
+자기소개 : <textarea name="intro" rows="10" cols="20" id="myintro"></textarea><br>             
+<input type="submit" value="회원가입(submit()함수호출)">                 
+</form>
+
+<script type="text/javascript" src="jquery-3.7.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#myfr').submit(function(){
+// 			alert("전송");
+			if($('#myid').val() == ""){
+				$('#mydiv').html("아이디 입력하세요").css('color','red');
+				$('#myid').focus();
+				// submit 버튼 기능이 동작하지 않게 false넘김
+				return false;
+			}
+			
+			if($('#mypass').val() == ""){
+				$('#mydiv').html("비밀번호 입력하세요").css('color','red');
+				$('#mypass').focus();
+				// submit 버튼 기능이 동작하지 않게 false넘김
+				return false;
+			}
+			
+			if($('#gender1').is(':checked')==false && $('#gender2').is(':checked')==false){
+				$('#mydiv').html("성별 선택하세요").css('color','red');
+				// submit 버튼 기능이 동작하지 않게 false넘김
+				return false;
+			}
+			
+			if($('#hobby1').is(':checked')==false && $('#hobby2').is(':checked')==false && $('#hobby3').is(':checked')==false){
+				$('#mydiv').html("취미 선택하세요").css('color','red');
+				// submit 버튼 기능이 동작하지 않게 false넘김
+				return false;
+			}
+			
+			if($('#mygrade').val() == ""){
+				$('#mydiv').html("등급 선택하세요").css('color','red');
+				$('#mygrade').focus();
+				// submit 버튼 기능이 동작하지 않게 false넘김
+				return false;
+			}
+			
+			if($('#myintro').val() == ""){
+				$('#mydiv').html("자기소개 입력하세요").css('color','red');
+				$('#myintro').focus();
+				// submit 버튼 기능이 동작하지 않게 false넘김
+				return false;
+			}
+			
+			
+		});
+	});
+</script>
+</body>
+</html>
+
+
+
+
+
+

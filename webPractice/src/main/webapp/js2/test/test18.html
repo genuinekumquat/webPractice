@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test18.html</title>
+</head>
+<body>
+<div id="con">
+	<h1>목록 추가</h1>
+	<input type = "text" id="subject">
+	<input type ='button' onclick="addList()" value="추가">
+	<br>
+	<ul id="infoList"></ul>
+</div>
+<script type="text/javascript">
+// 노드.parentNode -> 부모노드
+//부모노드. removeChild(자식노드) -> 부모노드애서 자식노드 삭제 
+function addList() {
+	var newLi = document.createElement("li");
+	var subject = document.querySelector("#subject");
+	var textNode  = document.createTextNode(subject.value);
+	newLi.appendChild(textNode);
+	
+	document.getElementById("infoList").appendChild(newLi);
+	
+	subject.value = "";
+	subject.focus(); 
+	
+	// li를 클릭하면 삭제 
+	// 배열변수 = li 모든 목록 
+	var items = document.querySelectorAll("li");
+	for(i=0;i<items.length;i++){
+		items[i].addEventListner("click",function(){
+			//this : 클릭한 대상 
+			if(this.parentNode){
+				this.parentNode.removeChild(this);
+			}
+		});
+	}
+}
+</script>
+</body>
+</html>

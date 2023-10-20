@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test14.html</title>
+</head>
+<body>
+<img src="../html1/1.jpg" id="img1">
+메시지 : <div id="msg"> </div> <br>
+<form action="test1.html" method="get" name="fr" onsubmit="return check()">
+아이디 : <input type="text" name="id" id="idd"><br>
+비밀번호 : <input type="password" name="pass" id="passd"><br>
+성별 : <input type="radio" name="gender" value="남" id="gender1">남
+      <input type="radio" name="gender" value="여" id="gender2">여<br>
+취미 : <input type="checkbox" name="hobby" value="여행" id="hobby1">여행
+      <input type="checkbox" name="hobby" value="게임" id="hobby2">게임
+      <input type="checkbox" name="hobby" value="축구" id="hobby3">축구<br>
+회원등급 : <select name="grade" id="graded">
+			<option value="">등급을 선택하세요</option>
+			<option value="1">1등급</option>
+			<option value="2">2등급</option>
+			<option value="3">3등급</option>
+         </select> <br>
+자기소개 : <textarea name="intro" rows="10" cols="20" id="introd"></textarea><br>             
+<input type="submit" value="회원가입(submit()함수호출)">                 
+</form>
+
+<script type="text/javascript">
+// https://www.w3schools.com/
+// DOM(Document Object Model) 문서 객체 모델
+// => 자바스크립트를 이용하여 웹 문서에 접근하고 제어 할 수 있도록 객체를 
+//    사용해 웹 문서를 체계적으로 정리하는 방법
+// DOM 접근 => id 선택자로 접근 getElementById("id이름") 메서드
+// => class 선택자로 접근 getElementsByClassName("class이름") 메서드
+// => name 선택자로 접근 getElementsByTagName("태그") 메서드
+
+// => querySelector(선택자) 메서드
+//    : id 선택자로 접근 querySelector("#이름")
+//    : class 선택자로 접근 querySelector(".이름")
+// => querySelectorAll(선택자 또는 태그) 메서드
+
+//  웹 요소(태그)의 내용을 수정하는 변수 (속성 ,프로퍼티) 
+//  innerText 텍스트 내용 수정, innerHTML 텍스트(HTML) 내용 수정
+
+// 속성을 가져오는 메서드      getAttribute("속성명") 메서드 
+// 속성을 수정(변경)하는 메서드 setAttribute("속성명","값") 메서드
+
+function check() {
+	
+// 	alert("이미지 속성 : " + document.querySelector("#img1").getAttribute("src"));
+// 	alert("이미지 속성 : " + document.querySelector("#img1").src);
+// 	document.querySelector("#img1").setAttribute("src","../html1/8.jpg");
+// 	document.querySelector("#img1").src="../html1/8.jpg";
+	
+	if(document.querySelector("#idd").value == ""){
+// 		alert("아이디 입력하세요");
+		document.querySelector("#msg").innerHTML="아이디 입력하세요";
+		// css 글자색 제어 
+		document.querySelector("#msg").style.color="red";
+		document.querySelector("#idd").focus();
+		// submit() 동작 되지 않게 => false 값을 리턴해서
+		//  => check()함수 호출 => submit버튼(submit()함수) 전달
+		return false;
+	}
+	if(document.querySelector("#passd").value == ""){
+// 		alert("비밀번호 입력하세요");
+		document.querySelector("#msg").innerHTML="비밀번호 입력하세요";
+		// css 배경색 제어
+		document.querySelector("#msg").style.backgroundColor="pink";
+		document.querySelector("#passd").focus();
+		return false;
+	}
+	if(document.querySelector("#gender1").checked == false && document.querySelector("#gender2").checked == false){
+// 		alert("성별 체크하세요");
+		document.querySelector("#msg").innerHTML="성별 체크하세요";
+		return false;
+	}
+	if(document.querySelector("#hobby1").checked == false && document.querySelector("#hobby2").checked == false && document.querySelector("#hobby3").checked == false){
+// 		alert("취미 체크하세요");
+		document.querySelector("#msg").innerHTML="취미 체크하세요";
+		return false;
+	}
+	if(document.querySelector("#graded").value == ""){
+// 		alert("회원등급 선택하세요");
+		document.querySelector("#msg").innerHTML="회원등급 선택하세요";
+		document.querySelector("#graded").focus();
+		return false;
+	}
+	if(document.querySelector("#introd").value == ""){
+// 		alert("자기소개 입력하세요");
+		document.querySelector("#msg").innerHTML="자기소개 입력하세요";
+		document.querySelector("#introd").focus();
+		return false;
+	}
+	// 전송 폼 -> submit()
+// 	document.fr.submit();
+}
+</script>
+</body>
+</html>

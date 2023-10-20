@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css3/test3.html</title>
+<style type="text/css">
+/* 2. 속성선택자 : 속성(태그)을 선택(조건) =>  태그[속성] */
+a[href]{
+	color: red;
+}
+/* 태그[속성=값]  속성 값 일치 조건*/
+a[target=_blank]{
+	background-color: yellow;
+}
+/* 태그[속성^=값]  속성 값 시작하는 속성요소*/
+a[title^=m]{
+	background-color: pink;
+}
+/* 태그[속성$=값]  속성 값 끝나는 속성요소*/
+a[href $= png]{
+	background-color: skyblue;
+}
+/* 태그[속성*=값]  속성 값을 포함하는 속성요소*/
+a[href *= st2]{
+	background-color: purple;
+}
+/* 태그[속성~=값]  속성 값으로 단어를 포함하는 속성요소*/
+/* class="flat button" */
+a[class ~= button]{
+	background-color: green;
+}
+/* 태그[속성|=값]  속성 값으로 단어(하이픈)를 포함하는 속성요소*/
+/* class="us-eng" */
+a[class |= us]{
+	background-color: blue;
+}
+</style>
+</head>
+<body>
+<ul>
+	<li><a>메인 메뉴 : </a></li>
+	<li><a href="test1.html" target="_blank">메뉴1</a></li>
+	<li><a href="test1.html" title="menu1">메뉴2</a></li>
+	<li><a href="../css2/mic.png">메뉴3</a></li>
+	<li><a href="test2.html">메뉴4</a></li>
+	<li><a href="test1.html" class="flat button">메뉴5</a></li>
+	<li><a href="test1.html" class="us-eng">메뉴6</a></li>
+</ul>
+
+
+</body>
+</html>

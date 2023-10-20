@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery1/test3.html</title>
+</head>
+<body>
+<div id="divdiv"></div>
+<table border="1">
+<tr><td>아이디</td><td>이름</td></tr>
+</table>
+<script type="text/javascript" src="jquery-3.7.0.js"></script>
+<script type="text/javascript">
+// 반복문   대상.each()  $.each(대상변수,함수())
+// 자바스크립트 배열 변수
+	$(document).ready(function(){
+		var arr = [
+			{"id":"kim","name":"김길동"},
+			{"id":"lee","name":"이길동"},
+			{"id":"hong","name":"홍길동"},
+		];
+		$.each(arr,function(index,item){
+// 			alert(index);
+// 			alert(item.id);
+// 			alert(item.name);
+			$('#divdiv').append(item.id+","+item.name+"<br>");
+			// <tr><td>아이디</td><td>이름</td></tr> => table태그 추가
+			$('table').append("<tr><td>"+item.id+"</td><td>"+item.name+"</td></tr>");
+		});
+	});
+
+	
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test8.html</title>
+</head>
+<body>
+<form action="test1.html" method="get" name="fr">
+라디오상자 : <input type="radio" name="ra" value="남">남
+           <input type="radio" name="ra" value="여">여<br>
+체크박스상자 : <input type="checkbox" name="ch" value="여행">여행
+            <input type="checkbox" name="ch" value="게임">게임<br>
+<input type="button" value="라디오상자정보버튼" onclick="fun1()">
+<input type="button" value="라디오상자정보변경" onclick="fun2()">
+<input type="button" value="라디오상자 제어" onclick="fun3()">
+</form>
+
+<script type="text/javascript">
+function fun3() {
+	// 첫번째 라디오상자 checked 변수 false 이고 (동시에)
+	// 두번째 라디오상자 checked 변수 false이면 
+	// "라디오 상자 체크하세요" , 함수 호출한 곳으로 리턴
+	if(document.fr.ra[0].checked == false && document.fr.ra[1].checked == false){
+		// "라디오 상자 체크하세요" , 함수 호출한 곳으로 리턴
+		alert("라디오 상자 체크하세요");
+		return;
+	}
+	if(document.fr.ch[0].checked == false && document.fr.ch[1].checked == false){
+		// "체크 상자 체크하세요" , 함수 호출한 곳으로 리턴
+		alert("체크 상자 체크하세요");
+		return;
+	}
+	// 폼 => submit()
+	document.fr.submit();
+}
+function fun2() {
+	// checked = true 값 변경 -> 라디오(체크)박스 선택
+	document.fr.ra[0].checked = true;
+}
+function fun1() {
+	alert(document.fr.ra[0].type);
+	alert(document.fr.ra[0].value);
+	alert(document.fr.ra[0].checked);
+	//체크(라디오)박스 클릭 기능
+	document.fr.ra[0].click();
+}
+
+//window - location 
+//       - history
+//       - document - image,div,...
+//                  - form - text, password, textare
+//                         - checkbox, radio
+//                         - select
+
+//window.document.form이름.checkbox이름[순서]     내장객체 
+//: 주제 웹브라우저 html문서 폼태그 checkbox 정보를 저장하는 내장객체
+//: document.form이름.checkbox이름[순서].멤버변수,
+//  document.form이름.checkbox이름[순서].메서드() 호출
+
+//document.form이름.checkbox이름[순서].type 멤버변수 -> checkbox type 정보 저장 
+//document.form이름.checkbox이름[순서].value 멤버변수 -> checkbox value 정보 저장 
+//document.form이름.checkbox이름[순서].checked 멤버변수 -> checkbox checked 정보 저장
+//   -> 체크가 되어있으면 true 저장, 체크가 안되어 있으면 false 저장
+
+//document.form이름.checkbox이름[순서].click() 메서드 -> checkbox 클릭(선택)기능
+
+</script>
+</body>
+</html>

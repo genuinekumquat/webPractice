@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js1/test5</title>
+</head>
+<body>
+<script type="text/javascript">
+//함수
+//function 함수이름() {
+//	명령;
+//  return 결과값;
+//}
+
+//함수정의
+function addNum2(a, b) {
+// 	alert(a+b);
+	return a+b;
+}
+
+//함수호출 => 리턴받을 값을 저장하는 기억장소 할당
+//          리턴값이 없으면 값이 없음(undefined)
+// alert("리턴받은 값 : " + addNum2(10,20));
+// alert("리턴받은 값 + 100: " + (addNum2(10,20) + 100));
+
+// 함수정의 mulNum2() 두수를 받아서 -> 두수의 곱을 리턴 
+function mulNum2(a, b) {
+	return a * b;
+}
+// 함수호출  -> 리턴받은값 출력
+// alert("리턴받은 값:" + mulNum2(10,20));
+// 함수호출  -> 리턴받은값/2  계산결과 출력
+// alert("리턴받은 값 /2 : " + mulNum2(10,20)/2 );
+
+//함수정의 maxFun() 두수를 받아서 -> 두수의 최대값을 구해서 리턴
+function maxFun(a, b) {
+	// max -> 두 수 중 최대값을 저장하는 변수
+	var max=0;
+	if(a > b){
+		max = a;
+	}else{
+		max = b;
+	}
+	return max;
+}
+
+//함수호출 -> 리턴받은 값 출력
+alert("두수 최대값:" + maxFun(10,20));
+
+//함수정의 sumFun() 수 하나를 받아서 -> 1 ~ 받은 수까지 합을 구해서 리턴
+function sumFun(num) {
+	var sum = 0;
+	for(var i=1;i<=num;i++){
+		sum = sum + i;
+	}
+	return sum;
+}
+
+//함수호출 -> 리턴받은 값 출력
+alert("합구해서 리턴받은값:" + sumFun(10));
+
+</script>
+</body>
+</html>

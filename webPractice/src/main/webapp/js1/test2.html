@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js1/test2</title>
+</head>
+<body>
+<script type="text/javascript">
+// 	1. 들여쓰기
+// 	2. 세미콜론 문장 구분
+// 	3. 공백 넣기 읽기 쉽게 작성
+// 	4. 주석(// 한줄 주석, /*여러줄 주석*/)
+//  5. 식별자(변수명, 함수명) 만드는 규칙
+//  6. 예약어는 식별자 변수 명으로 사용 못함
+// => ECMAScript
+// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference
+
+	// 1. 변수
+	// 2. 함수
+	// 3. 객체
+	
+	// 1. 변수 : 기억장소에 이름을 부여해서 값을 저장 
+	// 변수선언 var 변수명
+	// 변수이름 선언 규칙 1) 영문, 언더스코어(_), 숫자 사용 
+	//                    -> 숫자시작 못함, 공백포함 못함, 특수문자시작 못함
+	//                    -> 대소문자 구별, 예약어 사용 못함
+	//                 2) 여러단어 연결 -> 단어구분 대문자, 언더스코어(_) 이용
+	//                    -> 변수명 의미있게 작성
+	
+	var currentYear;
+	var birthYear, age;
+	var num = 10;
+	
+	// 자바스크립트에서 형을 선언하지 않고 기억장소에 저장되는 값에 따라 형이 바뀜
+	
+	num = 3.4;
+	
+	// 자료형
+	//1) 숫자형 : 정수,실수
+	//2) 문자열 : 큰따옴표, 작은따옴표 묶으면 문자로 인식
+	//3) 논리형 : true/false
+	
+	//4) 배열, 객체, undefined(변수 선언하고 값을 할당하지 않은 변수)
+	
+	alert(typeof num); //number
+	
+	var str="문자열";
+	
+	alert(typeof str); //string
+	
+	var aaa=true;
+	
+	alert(typeof aaa); //boolean
+	
+	var s4=["봄","여름","가을","겨울"];
+	
+	alert(typeof s4); // 배열 object(객체)
+	alert(typeof s4[0]); //string
+	
+	
+	alert(currentYear); // undefined(형지정 없음)
+	
+	
+
+</script>
+</body>
+</html>

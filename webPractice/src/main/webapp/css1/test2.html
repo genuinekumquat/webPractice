@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css1/test2.html</title>
+<style type="text/css">
+/* 	대상{
+		스타일속성 : 값;
+	} 
+	
+	대상 : *(전체선택), 태그대상선택, id=표시이름 (#이름), class=표시이름(.이름)
+	*/
+	*{
+		color: blue;
+	}
+/* 	p태그 글자색 green색 적용 */
+	p{
+		color: green;
+	}
+/* id="pp" => 일반적으로 큰영역*/
+	#pp{
+		color: orange;
+	}
+/* 	class="ppp" => 일반적으로 작은 영역  */
+	.ppp{
+		color: purple;
+	}
+/* 	h1태그 배경색 skyblue색 적용 */
+h1{
+	background-color: skyblue;
+}
+/* class="accent" 글자색 red색 적용 */
+.accent{
+	color: red;
+}
+/* id="cont" */
+#cont{
+/* 	너비 500px */
+ 	width: 500px; 
+/*  	테두리선 두께 1px 선종류 실선 선색 검정 */
+	border: 1px solid black;
+/* 	안여백 10px */
+	padding: 10px;
+/* 	밖여백 위 아래 10px,  왼쪽 오른쪽 일정 간격 가운데 정렬auto  */
+	margin: 10px auto;
+}
+/* h1, p태그 글자 가운데 => 공통적 스타일 적용 */
+h1, p{
+	text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div id="cont">
+
+<h1>레드향</h1>
+<p>껍질에 붉은 빛이 돌아 <span class="accent">레드향</span>이라 불린다.</p>
+
+<p id="pp">레드향은 한라봉과 귤을 교배한 것으로 <br>
+일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+
+<p class="ppp">비타민 C와 비타민 P가 풍부해 <br>
+혈액순환1, 감기예방2 등에 좋은 것으로 알려져 있다.</p>
+
+</div>
+</body>
+</html>

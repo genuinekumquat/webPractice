@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test6.html</title>
+</head>
+<body>
+<form action="test1.html" method="get" name="fr">
+아이디 : <input type="text" name="id"><br>
+비밀번호 : <input type="password" name="pass"><br>
+<input type="submit" value="전송">
+<input type="reset" value="초기화">
+<input type="button" value="폼정보버튼" onclick="fun1()">
+<input type="button" value="전송버튼" onclick="fun2()">
+<input type="button" value="초기화버튼" onclick="fun3()">
+<input type="button" value="폼정보변경 전송버튼" onclick="fun4()">
+<input type="button" value="장바구니" onclick="fun5('basket.jsp')">
+<input type="button" value="바로구매" onclick="fun5('order.jsp')">
+</form>
+
+<script type="text/javascript">
+function fun5(a) {
+	alert(a);
+	//action   = 주소를 전달받는 변수 값  변경 => submit() 전송
+	document.fr.action = a;
+	document.fr.submit();
+}
+
+function fun4() {
+	//action 값 test2.html 변경, method = post 변경 => submit() 전송
+	document.fr.action ="test2.html";
+	document.fr.method = "post";
+	document.fr.submit();
+}
+function fun3() {
+	document.fr.reset();
+}
+function fun2() {
+	document.fr.submit();
+}
+function fun1() {
+	alert(document.fr.action);
+	alert(document.fr.method);
+}
+
+//window - location 
+//       - history
+//       - document - image,div,...
+//                  - form - text, password, textare
+//                         - checkbox, radio
+//                         - select
+
+//window.document.form이름 내장객체 
+//    : 주제 웹브라우저 html문서 폼태그 정보를 저장하는 내장객체
+//    : document.form이름.멤버변수, document.form이름.메서드() 호출
+
+// document.form이름.action 멤버변수 -> 폼 연결페이지 정보 저장
+// document.form이름.method 멤버변수 -> 폼 데이터 전송 방식 저장
+// document.form이름.submit() 메서드 
+//               -> 폼 데이터를 서버에 전달하고 연결페이지 이동기능
+// document.form이름.reset() 메서드 -> 폼화면 초기화 기능
+
+
+</script>
+</body>
+</html>

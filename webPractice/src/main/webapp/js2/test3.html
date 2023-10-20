@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test3.html</title>
+</head>
+<body>
+<input type="button" value="방문기록개수" onclick="fun1()">
+<input type="button" value="뒤로 한 칸 이동" onclick="fun2()">
+<input type="button" value="앞으로 한 칸 이동" onclick="fun3()">
+
+<script type="text/javascript">
+function fun3() {
+	alert("한칸 앞으로 이동");
+	history.forward();
+// 	history.go(1);
+}
+
+function fun2() {
+	alert("한칸 뒤로 이동");
+	history.back();
+// 	history.go(-1);
+}
+
+function fun1() {
+	alert("방문기록개수 : " + history.length);
+	//방문 test3.html -> test1.html -> test2.html -> test3.html
+}
+
+//window.history 내장객체 : 주제 웹브라우저 방문기록 저장하는 내장객체
+//                      : window 생략가능
+//                      : history.멤버변수, history.메서드() 호출
+
+//방문기록개수 멤버변수 : history.length 멤버변수 -> 방문기록 개수 저장된 변수
+//방문기록이동 메서드() : history.back() -> 방문기록 중 뒤로이동
+//                  : history.forward() -> 방문기록 중 앞으로이동
+//                  : history.go(-1) -> 방문기록 중 몇칸 뒤로,앞으로이동
+
+</script>
+</body>
+</html>
+

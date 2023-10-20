@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test17.html</title>
+</head>
+<body>
+<div id="con">
+	<h1>p태그 글자</h1>
+	<a href="#" onclick="addP()">더 보기</a>
+	<div id="info"></div>
+	
+	<h1>img태그 src속성</h1>
+	<a href="#" onclick="addImg()">더 보기</a>
+	<div id="infoImg"></div>
+</div>
+
+<script type="text/javascript">
+function addImg() {
+	var newImg = document.createElement("img");
+	var srcNode = document.createAttribute("src");
+	srcNode.value = "../html1/1.jpg";
+	newImg.setAttributeNode(srcNode);
+	document.getElementById("infoImg").appendChild(newImg);
+}
+function addP() {
+	var newP = document.createElement("p");
+	var textNode = document.createTextNode("내용 추가");
+	newP.appendChild(textNode);
+	document.getElementById("info").appendChild(newP);
+}
+// DOM 노드 추가 , 삭제
+// -> 새로운 태그 추가 : createElement(태그명)
+// -> 속성 노드 추가 : createAttribute(속성)
+// -> 속성 자식 노드 연결 : setAttributeNode(속성노드)
+// -> 자식 노드(태그) 연결 : appendChild(자식노드)
+
+// -> 새로운 태그 추가 : createElement(태그명)
+// -> 텍스트 노드 추가 : createTextNode(텍스트)
+// -> 자식 노드(태그) 연결 : appendChild(자식노드)
+
+</script>
+</body>
+</html>

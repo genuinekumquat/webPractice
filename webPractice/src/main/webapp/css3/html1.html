@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ /*  CSS 고급선택자 
+ 1 연결선택자  ->하위선택자, 인접형제선택자 
+ 2 속성선택자 
+ 가상클래스와가상요소*/ 
+ 
+ /*하위선택자 id="com 아래 모든 p태그 
+ 상위요소(태그) 공백한칸 하위요소(자손)"*/
+ #con p{
+ 	color : blue;
+ }
+ /* 자식 선택자   id="con" 바로 아래 밑에 p태그 
+ 상위요소(태그)> 하위요소(자식) */
+ #con >p{
+	background-color : yellow;
+}
+</style>
+</head>
+<body>
+<div id ="con">
+	<h1>제목</h1>
+	<p>본문1</p>
+	<div>
+		<p>본문내용 1</p>
+		<p>본문내용 2</p>
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css2/test4.html</title>
+<style type="text/css">
+#box1{
+	width: 100px; height: 100px;
+	background-color: red;
+/* 	밖여백  픽셀, 백분율, auto 자동계산 */
+/* 	마진 중첩 : 밖여백 겹쳐질때 중첩 */
+	margin: 50px;
+/* 	위아래  왼쪽오른쪽 */
+	margin: 10px 50px;
+/* 	위 오른 아래 왼 */
+	margin: 10px 20px 30px 40px;
+	
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	margin-left: 40px;
+	
+/* 	밖여백 이용 가운데 정렬
+    => auto 왼쪽 오른쪽 일정간격 계산해서 여백 지정 */
+	margin: 50px auto;
+}
+#box2{
+	width: 100px; height: 100px;
+	background-color: green;
+	/* 	마진 중첩 : 밖여백 겹쳐질때 중첩 */
+	margin: 50px;
+}
+#box3{
+	width: 100px; height: 100px;
+	background-color: blue;
+	/* 	마진 중첩 : 밖여백 겹쳐질때 중첩 */
+	margin: 50px;
+	
+/* 	안여백 */
+	padding: 10px;
+	padding: 10px 20px;
+	padding: 10px 20px 30px 40px;
+	
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+	padding-left: 40px;
+}
+</style>
+</head>
+<body>
+<div id="box1">내용1</div>
+<div id="box2">내용2</div>
+<div id="box3">내용3</div>
+</body>
+</html>

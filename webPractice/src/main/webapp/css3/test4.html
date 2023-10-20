@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css3/test4.html</title>
+<style type="text/css">
+/* 3. 가상클래스와 가상요소
+   가상클래스 (사용자 동작에 따라 스타일 변경)
+    :link , :visited, :hover, :active
+    :target, :enabled, :disabled, :checked, :not (제외) */
+
+a:link, a:visited {
+/* 	기본색 방문 보라색, 미방문 파란색 */
+	color: black;
+	text-decoration: none;
+} 
+a:hover {
+/* 마우스를 하이퍼링크 위에 올려 놓았을때  */
+	text-decoration: underline;
+	color: white;
+	background-color: silver;
+} 
+a:active {
+/* 	하이퍼링크 클릭 순간 */
+	text-decoration: underline;
+	color: white;
+	background-color: red;
+}  
+#intro:target {
+/* 	#intro 하이퍼링크 클릭하면 id="intro" 타겟 찾아서 스타일 변경 */
+	background-color: green;
+}
+#tx:enabled {
+	color: blue;
+}
+#tx:disabled {
+	color: red;
+}
+/* :checked 체크가 되어있으면 스타일변경 
+    + label   인접형제 선택*/
+input:checked + label{
+	color: red;
+}
+/* :not(제외대상) 제외 */
+a:not([href $= png]) {
+	color: blue;
+}
+</style>
+</head>
+<body>
+<input type="radio" name="room" id="basic">
+<label>기본형</label>
+<input type="radio" name="room" id="family">
+<label>가족형</label>
+<br>
+
+<input type="text" name="tx1" id="tx" value="입력값">
+<input type="text" name="tx2" id="tx" disabled value="입력값2">
+
+<div id="intro">
+<h2>이용안내</h2>
+내용
+</div>
+<ul>
+	<li><a>메인 메뉴 : </a></li>
+	<li><a href="#intro">메뉴1</a></li>
+	<li><a href="test1.html" title="menu1">메뉴2</a></li>
+	<li><a href="../css2/mic.png">메뉴3</a></li>
+	<li><a href="test2.html">메뉴4</a></li>
+	<li><a href="test1.html" class="flat button">메뉴5</a></li>
+	<li><a href="test1.html" class="us-eng">메뉴6</a></li>
+</ul>
+
+</body>
+</html>

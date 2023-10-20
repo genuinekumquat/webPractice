@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery1/test5.html</title>
+</head>
+<body>
+<input type="button" value="글자색 변경" id="btn1"><br>
+<h1 id="tx1">글자색 변경</h1>
+
+<input type="button" value="이미지 테두리선 변경" id="btn2"><br>
+<img src="../html1/1.jpg" id="img1"><br>
+
+<input type="button" value="내용변경" id="btn3"><br>
+<div id="div3">div안에 내용</div>
+
+<input type="button" value="내용추가" id="btn4"><br>
+<div id="div4">div안에 내용 추가</div>
+
+<input type="button" value="테이블목록" id="btn5"><br>
+<table border="1" id="table1">
+	<tr><td>번호</td><td>제목</td></tr>
+</table>
+
+<script type="text/javascript" src="jquery-3.7.0.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// id="btn1" 클릭했을때 click() -> id="tx1" -> 글자색 변경  css()
+	$('#btn1').click(function(){
+		$('#tx1').css('color','red');
+	});
+	// id="btn2" 클릭했을때 click() -> id="img1" -> 이미지 테두리선 변경 attr()
+	$('#btn2').click(function(){
+		$('#img1').attr('border','5');
+	});
+	// id="btn3" 클릭했을때 click() -> id="div3" -> 내용변경 html()
+	$('#btn3').click(function(){
+		$('#div3').html('내용변경');
+	});
+	// id="btn4" 클릭했을때 click() -> id="div4" -> 기존내용추가 append()
+	$('#btn4').click(function(){
+		$('#div4').append('기존내용추가');
+	});
+	
+	// id="btn5" 클릭했을때 click() -> 배열반복 each() 
+	//          => id="table1" -> 배열 내용 append()
+	var arr = [
+		{"num":"1","subject":"제목1"},
+		{"num":"2","subject":"제목2"},
+		{"num":"3","subject":"제목3"}
+	];
+	
+	$('#btn5').click(function(){
+		$.each(arr,function(index,item){
+$('#table1').append('<tr><td>'+item.num+'</td><td>'+item.subject+'</td></tr>');
+		});
+	});
+	
+});
+</script>
+</body>
+</html>
+

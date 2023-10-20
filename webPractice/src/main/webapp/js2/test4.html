@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test4.html</title>
+</head>
+<body>
+<input type="button" value="문서제목확인" onclick="fun1()">
+<input type="button" value="문서제목변경" onclick="fun2()">
+<input type="button" value="문서배경색변경" onclick="fun3()"><br>
+<input type="radio" name="ra" value="green" 
+                    onclick="fun4('green')">green색
+<input type="radio" name="ra" value="skyblue" 
+                    onclick="fun4('skyblue')">skyblue색
+<input type="radio" name="ra" value="pink" 
+                    onclick="fun4('pink')">pink색
+                    
+ <input type="button" value="화면정보출력" onclick="fun5()">
+                                    
+<script type="text/javascript">
+function fun5() {
+	//p594 window.screen  내장객체 : 화면정보를 저장하는 내장객체
+	// screen.멤버변수   screen.메서드()
+	// 사용가능한 너비,높이
+	alert(screen.availWidth); //1920
+	alert(screen.availHeight); //1032
+	// 화면 너비,높이
+	alert(screen.width); //1920
+	alert(screen.height); //1080
+}
+//문서내용출력 메서드() : document.writeln()                 
+    document.writeln("<br>html 문서내 출력");
+    
+function fun4(a) {
+	alert(a);
+	//배경색 저장하는 변수 = 전달받은 색
+	document.bgColor = a;
+}                   
+function fun3() {
+	document.bgColor = "yellow";
+}
+function fun2() {
+	document.title="문서제목";
+}
+function fun1() {
+	alert(document.title);
+}
+
+
+//window - location 
+//       - history
+//       - document - image,div,...
+//                  - form - text, password, textare
+//                         - checkbox, radio
+//                         - select
+
+//window.document 내장객체 : 주제 웹브라우저 html문서 틀 기본정보를 저장하는 내장객체
+//                      : window 생략가능
+//                      : document.멤버변수, document.메서드() 호출
+
+//문서제목저장 멤버변수 : document.title 멤버변수 -> 문서제목 저장하는 변수
+//문서배경색저장 멤버변수 : document.bgColor 멤버변수 -> 문서배경색 저장하는 변수
+//문서내용출력 메서드() : document.writeln() -> html문서 내용 출력
+</script>
+</body>
+</html>

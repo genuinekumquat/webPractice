@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery1/test2.html</title>
+</head>
+<body>
+<img src="../html1/1.jpg" id="img1">
+<div id="divdiv">div태그</div><br>
+<div id="app">내용추가</div>
+
+<script type="text/javascript" src="jquery-3.7.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// 대상.attr("태그속성",값) : 태그 속성 값 변경
+// 		alert("이미지 속성 변경");
+		$('#img1').attr('src','../html1/8.jpg');
+		// 대상.html(태그내용) : 대상에 태그형태 내용을 넣기 => 아이디 중복체크
+		$('#divdiv').html("<h1>내용내용</h1>"); 
+		// 대상.append(태그내용) : 대상에 태그형태 내용을 추가 => 목록추가,게시판목록추가
+		$('#app').append("<h2>내용추가2</h2>");
+	});
+</script>
+
+</body>
+</html>
+
+
+

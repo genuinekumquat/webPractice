@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js1/test6.html</title>
+</head>
+<body>
+<script type="text/javascript">
+// 내장함수 : 자바스크립트에서 언어를 만들때 미리 만들어 놓은 함수
+// 미리 정의 되어진 함수
+// function confirm(a) {
+// 	alert(a);
+// 	//확인클릭
+// 	return true
+// 	//취소클릭
+// 	return false;
+// }
+
+// 확인 창 출력 => 확인을 클릭 true 리턴, 취소를 클릭 false 리턴
+// alert("리턴받은 값 : "+ confirm("확인해주세요"));
+// 내장함수 호출
+// var a = confirm("확인해주세요");
+// alert(a);
+// a 변수 값이 true이면 출력 "확인버튼을 클릭" 
+// a 변수 값이 false이면 출력 "취소버튼을 클릭"
+// if( a == true){
+// 	alert("확인버튼을 클릭");
+// }else{
+// 	alert("취소버튼을 클릭");
+// }
+
+// var b = confirm("정말로 회원탈퇴  할까요?");
+// // 사용자가 확인을 누르면 (true리턴) "회원탈퇴 처리 하겠습니다"
+// // 사용자가 취소를 누르면 (false리턴)"회원탈퇴 취소하겠습니다"
+// if( b == true){
+// 	alert("회원탈퇴 처리 하겠습니다");
+// }else{
+// 	alert("회원탈퇴 취소하겠습니다");
+// }
+
+// 창에 문자열을 입력받는 함수 prompt()
+var c = prompt("입력하세요");
+alert(c);       //5(문자)
+alert(c + 100); //5100(문자+숫자=> 문자연결)
+//(주의) 숫자 더하기 ->  문자를 숫자로 변경하여  -> 더하기 작업
+alert(parseInt(c) + 100); // 105 (숫자+숫자-> 더하기 계산)
+// 실수형태 문자 -> 문자를 실수형으로 변경하여 -> 더하기 작업
+alert(parseFloat(c) + 100); // 105.5 (숫자+숫자-> 더하기 계산)
+alert(c * 100); //500 (자동으로 문자가 숫자로 변경되어서 곱하기 계산)
+
+
+
+	
+</script>
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery1/test1.html</title>
+</head>
+<body>
+<h1>제목1</h1>
+<h1 id="hh">제목2</h1>
+<h1>제목3</h1>
+<p>본문1</p>
+<p class="pp">본문2</p>
+텍스트 : <input type="text" value="텍스트"><br>
+비밀번호 : <input type="password" value="1234"><br>
+<table border="1">
+<tr><td>번호</td><td>제목</td></tr>
+<tr><td>1</td><td>제목1</td></tr>
+<tr><td>2</td><td>제목2</td></tr>
+<tr><td>3</td><td>제목3</td></tr>
+<tr><td>4</td><td>제목4</td></tr>
+<tr><td>5</td><td>제목5</td></tr>
+</table>
+<script type="text/javascript" src="jquery-3.7.0.js"></script>
+<script type="text/javascript">
+// jquery.com
+// jquery : 자바스크립트로 만든 함수 모음
+// 다운로드 : jquery-3.7.0.js
+//	Download the uncompressed, development jQuery 3.7.0
+// jquery 사용형태 => 대상.함수()
+	$(document).ready(function(){
+// 		alert("jquery 동작");
+		// 대상  전체대상 '*', 태그대상 '태그', 
+		//      id=이름  '#이름', class=이름 '.이름' 
+		$('*').css('color','blue');
+		$('h1').css('color','red');
+		$('p').css('color','green');
+		
+		$('#hh').css('color','pink');
+		$('.pp').css('background-color','yellow');
+		
+		// 대상  태그[속성 = 값] 조건으로 대상 지정
+		$('input[type=text]').css('color','orange');
+		// 대상 태그:odd 홀수번째 , :even 짝수번째, :first 첫번째, :last 마지막
+		$('tr:odd').css('background','skyblue');
+		$('tr:even').css('background','pink');
+		$('tr:first').css('background','green');
+		$('tr:last').css('background','yellow');
+	});
+	
+</script>
+
+</body>
+</html>

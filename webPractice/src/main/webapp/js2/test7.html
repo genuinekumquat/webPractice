@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test7.html</title>
+</head>
+<body>
+<form action="test1.html" method="get" name="fr">
+아이디 : <input type="text" name="id"><br>
+비밀번호 : <input type="password" name="pass"><br>
+자기소개 : <textarea name="intro" rows="10" cols="20"></textarea>
+<input type="button" value="텍스트정보버튼" onclick="fun1()">
+<input type="button" value="텍스트정보변경" onclick="fun2()">
+<input type="button" value="텍스트상자제어" onclick="fun3()">
+<input type="button" value="텍스트상자제어2" onclick="fun4()">
+</form>
+
+<script type="text/javascript">
+function fun4() {
+	// 문자열 내장객체  문자열.멤버변수, 문자열.메서드() 
+// 	alert("아이디상자 입력된 문자열 : " + document.fr.id.value);
+// 	alert("아이디상자 입력된 문자열길이 : " + document.fr.id.value.length);
+	
+	if(document.fr.id.value == ""){
+		alert("텍스트 상자 입력하세요");
+		document.fr.id.focus();
+		//함수 멈춤 => 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	// 아이디 텍스트 상자의 문자열 길이 5자 입력되지 않으면 => 아이디 5자, 포커스
+	if(document.fr.id.value.length != 5){
+// 		아이디 5자, 포커스,함수 호출한 곳으로 되돌아감
+		alert("아이디 5자");
+		document.fr.id.focus();
+		//함수 멈춤 => 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	
+	if(document.fr.pass.value == ""){
+// 		"비밀번호 상자 입력하세요" 포커스 깜박
+		alert("비밀번호 상자 입력하세요");
+		document.fr.pass.focus();
+		//함수 멈춤 => 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	// 비밀번호 상자 입력된 문자열 8자 미만이면 => 비밀번호 8자이상,포커스,리턴
+	if(document.fr.pass.value.length < 8){
+		alert("비밀번호 8자이상 입력하세요");
+		document.fr.pass.focus();
+		//함수 멈춤 => 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	
+	if(document.fr.intro.value == ""){
+// 		"자기소개 상자 입력하세요" 포커스 깜박
+		alert("자기소개 상자 입력하세요");
+		document.fr.intro.focus();
+		//함수 멈춤 => 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	// 자기소개 입력한 문자열 길이 4 ~ 7 자가 아니면 => "4~7자" 포커스 리턴
+	// !(document.fr.intro.value.length >= 4  &&  document.fr.intro.value.length <= 7)
+	// 자기소개 입력한 문자열 4자 보다 작거나 7자 보다 큰 경우 =>
+	if(document.fr.intro.value.length < 4  ||  document.fr.intro.value.length > 7){
+		alert("자기소개 4~7자 입력하세요");
+		document.fr.intro.focus();
+		//함수 멈춤 => 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	
+	
+// 		=> submit() 전송
+		document.fr.submit();
+	
+}
+
+function fun3() {
+// 	alert(document.fr.id.value);
+	// 텍스트 상자 비어있으면(텍스트 상자 value값이 "" 같으면)
+	// "텍스트 상자 입력하세요" 포커스 깜박
+	if(document.fr.id.value == ""){
+		alert("텍스트 상자 입력하세요");
+		document.fr.id.focus();
+	}else if(document.fr.pass.value == ""){
+// 		"비밀번호 상자 입력하세요" 포커스 깜박
+		alert("비밀번호 상자 입력하세요");
+		document.fr.pass.focus();
+	}else if(document.fr.intro.value == ""){
+// 		"자기소개 상자 입력하세요" 포커스 깜박
+		alert("자기소개 상자 입력하세요");
+		document.fr.intro.focus();
+	}else{
+// 		=> submit() 전송
+		document.fr.submit();
+	}
+}
+
+function fun2() {
+	// 아이디 텍스트 상자 value 변수 값을 변경
+// 	document.fr.id.value="변경된 값";
+	document.fr.id.value="";
+	//텍스트상자 커서 깜박 기능
+	document.fr.id.focus();
+}
+function fun1() {
+	alert(document.fr.id.type);
+	alert(document.fr.id.value);
+	//텍스트상자 커서 깜박 기능
+	document.fr.id.focus();
+	//텍스트상자 커서 깜박 해제 기능
+	document.fr.id.blur();
+	//텍스트상자 내용 선택하는(블럭) 기능
+	document.fr.id.select();
+}
+
+//window - location 
+//       - history
+//       - document - image,div,...
+//                  - form - text, password, textare
+//                         - checkbox, radio
+//                         - select
+
+//window.document.form이름.text이름   내장객체 
+//      : 주제 웹브라우저 html문서 폼태그 텍스트상자 정보를 저장하는 내장객체
+//: document.form이름.text이름.멤버변수, document.form이름.text이름.메서드() 호출
+
+//document.form이름.text이름.type 멤버변수 -> 텍스트상자 type 정보 저장 
+//document.form이름.text이름.value 멤버변수 -> 텍스트상자 value 정보 저장 
+
+//document.form이름.text이름.focus() 메서드 -> 텍스트상자 커서 깜박 기능
+//document.form이름.text이름.blur() 메서드 -> 텍스트상자 커서 깜박 해제 기능
+//document.form이름.text이름.select() 메서드 -> 텍스트상자 내용 선택하는(블럭) 기능
+
+
+</script>
+</body>
+</html>

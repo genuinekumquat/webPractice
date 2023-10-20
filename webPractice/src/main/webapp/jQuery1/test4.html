@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery1/test4.html</title>
+</head>
+<body>
+<h1>제목0</h1>
+<h1>제목1</h1>
+<h1>제목2</h1>
+<img src="../html1/1.jpg" id="img1">
+<script type="text/javascript" src="jquery-3.7.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//이벤트 대상.bind('이벤트종류',함수())
+		//     대상.click()
+		
+// 		$('h1').bind('click',function(){
+// 			alert("메시지");
+// 		});
+		$('h1').click(function(){
+// 			alert("메시지2");
+			// 클릭한 대상 (this)에 * 추가 append()
+			$(this).append("*");
+			//이벤트 한번 수행하고 멈춤
+			$(this).unbind();
+		});
+		// id="img1" mouseover() 했을때  => 그대상에 src속성 "../html1/8.jpg"
+// 		$('#img1').mouseover(function(){
+// 			$(this).attr('src','../html1/8.jpg');
+// 		});
+		
+		// id="img1" mouseout() 했을때  => 그대상에 src속성 "../html1/1.jpg"
+// 		$('#img1').mouseout(function(){
+// 			$(this).attr('src','../html1/1.jpg');
+// 		});
+		
+		$('#img1').mouseover(function(){
+			$(this).attr('src','../html1/8.jpg');
+		}).mouseout(function(){
+			$(this).attr('src','../html1/1.jpg');
+		});
+		
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test9.html</title>
+</head>
+<body>
+<form action="test1.html" method="get" name="fr">
+목록상자 : <select name="se">
+			<option value="">목록을 선택하세요</option>
+			<option value="목1">목록1</option>
+			<option value="목2">목록2</option>
+			<option value="목3">목록3</option>
+         </select> <br>
+<input type="button" value="목록상자정보" onclick="fun1()">
+<input type="button" value="목록상자정보변경" onclick="fun2()">
+<input type="button" value="목록상자제어" onclick="fun3()">
+</form>
+
+<script type="text/javascript">
+function fun3() {
+	//첫번째 목록이 선택되어 있으면 => "목록 선택", 포커스, 리턴
+	if(document.fr.se.value == ""){
+		//"목록 선택", 포커스, 리턴
+		alert("목록 선택");
+		document.fr.se.focus();
+		return;
+	}
+	
+// 	if(document.fr.se.selectedIndex == 0){
+// 		//"목록 선택", 포커스, 리턴
+// 		alert("목록 선택");
+// 		document.fr.se.focus();
+// 		return;
+// 	}
+	// 폼 -> submit()
+	document.fr.submit();
+}
+function fun2() {
+	// //선택된 목록 순서 1 값(두번째 값) 저장
+	document.fr.se.selectedIndex = 1;
+}
+function fun1() {
+	alert(document.fr.se.type);
+	alert(document.fr.se.value);//선택된 목록 value값 저장
+	alert(document.fr.se.selectedIndex);//선택된 목록 순서값 저장
+	// 목록 상자 포커스(진한 테두리선)
+	document.fr.se.focus();
+}
+
+//window - location 
+//       - history
+//       - document - image,div,...
+//                  - form - text, password, textare
+//                         - checkbox, radio
+//                         - select
+
+//window.document.form이름.select이름     내장객체 
+//: 주제 웹브라우저 html문서 폼태그 select 정보를 저장하는 내장객체
+//: document.form이름.select이름.멤버변수,
+//  document.form이름.select이름.메서드() 호출
+
+//document.form이름.select이름.type 멤버변수 -> select type 정보 저장 
+//document.form이름.select이름.value 멤버변수 -> select value 정보 저장 
+//                               -> 목록중에 선택된 값이 value 변수 저장 
+//document.form이름.select이름.selectedIndex 멤버변수 
+//              -> select 선택된 순서값 저장
+
+//document.form이름.select이름.focus() 메서드 -> select 포커스 기능
+
+</script>
+</body>
+</html>
